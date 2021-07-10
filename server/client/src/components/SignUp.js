@@ -22,6 +22,20 @@ const SignUp = () => {
     e.preventDefault();
 
     const { firstName, lastName, email, password, cpassword } = user;
+    
+    if (!firstName || !lastName || !email || !password || !cpassword) {
+      window.alert("Please fill all the fields.");
+      return;
+    }
+    if (!/\S+@\S+\.\S+/.test(email)) {
+      window.alert("Enter provide valid email.");
+      return;
+    }
+    if (password !== cpassword) {
+      window.alert("Password and confirm password are not matching.");
+      return;
+    }
+
     const res = await fetch("/signup", {
       method: "POST",
       headers: {
@@ -39,8 +53,8 @@ const SignUp = () => {
     if (data.status === 422 || !data) {
       window.alert("Registration Failed");
     } else {
-      window.alert("Registration Successful");
-      history.push("/signin");
+      localStorage.email = email;
+      history.push("/success");
     }
   };
 

@@ -45,6 +45,21 @@ form {
   margin-left: auto;
   margin-right: auto;
 }
+.success {
+  width: 33%;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  text-align: center;
+  padding: 30px 10px 10px 10px;
+  margin-top: 60px;
+}
+.success button {
+  margin-top: 25px;
+}
+.success h1 {
+  margin-bottom: 15px;
+}
 .group {
   position: relative;
 }
@@ -56,7 +71,7 @@ input[type=text], input[type=password], input[type=email] {
   border: none;
   font-weight: bold;
 }
-input[type=button], input[type=submit] {
+input[type=button], input[type=submit], button {
   color: white;
   width: 95%;
   padding: 16px 20px;
@@ -70,8 +85,6 @@ input[type=button], input[type=submit] {
 input:focus {
   outline: none;
 }
-
-/* LABEL ======================================= */
 label {
   color: #999;
   font-size: 18px;
@@ -84,8 +97,6 @@ label {
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 }
-
-/* active state */
 input:focus ~ label,
 input:valid ~ label {
   top: -20px;
@@ -98,8 +109,6 @@ input:valid ~ label {
   border-radius: 10px;
   margin: 10px;
 }
-
-/* BOTTOM BARS ================================= */
 .bar {
   position: relative;
   display: block;
@@ -123,14 +132,10 @@ input:valid ~ label {
 .bar:after {
   right: 50%;
 }
-
-/* active state */
 input:focus ~ .bar:before,
 input:focus ~ .bar:after {
   width: 50%;
 }
-
-/* HIGHLIGHTER ================================== */
 .highlight {
   position: absolute;
   height: 60%;
@@ -140,15 +145,14 @@ input:focus ~ .bar:after {
   pointer-events: none;
   opacity: 0.5;
 }
-
-/* active state */
+.b-none {
+  border: none;
+}
 input:focus ~ .highlight {
   -webkit-animation: inputHighlighter 0.3s ease;
   -moz-animation: inputHighlighter 0.3s ease;
   animation: inputHighlighter 0.3s ease;
 }
-
-/* ANIMATIONS ================ */
 @-webkit-keyframes inputHighlighter {
   from {
     background: lightgray;

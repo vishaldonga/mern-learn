@@ -10,6 +10,16 @@ const SignIn = () => {
 
   const loginUser = async (e) => {
     e.preventDefault();
+
+    if (!email || !password) {
+      window.alert("Please fill all the fields.");
+      return;
+    }
+    if (!/\S+@\S+\.\S+/.test(email)) {
+      window.alert("Enter provide valid email.");
+      return;
+    }
+
     const res = await fetch("/signin", {
       method: "POST",
       headers: { "Content-Type": "application/json" },

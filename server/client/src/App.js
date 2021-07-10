@@ -9,6 +9,7 @@ import SignIn from "./components/SignIn";
 import ErrorPage from "./components/ErrorPage";
 import Logout from "./components/Logout";
 import { initialState, reducer } from "./reducer/UserReducer";
+import Success from "./components/Success";
 
 const Routing = () => {
   return (
@@ -24,6 +25,9 @@ const Routing = () => {
       </Route>
       <Route path="/signin">
         <SignIn />
+      </Route>
+      <Route path="/success">
+        <Success />
       </Route>
       <Route path="/signout">
         <Logout />
