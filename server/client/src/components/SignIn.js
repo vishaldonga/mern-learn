@@ -1,5 +1,7 @@
 import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
+import { MdEmail } from "react-icons/md";
+import { RiLockPasswordFill } from "react-icons/ri";
 import { UserContext } from "../App";
 
 const SignIn = () => {
@@ -57,6 +59,7 @@ const SignIn = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
+              <MdEmail />
               <span className="highlight"></span>
               <span className="bar"></span>
               <label>Email</label>
@@ -72,6 +75,7 @@ const SignIn = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
+              <RiLockPasswordFill />
               <span className="highlight"></span>
               <span className="bar"></span>
               <label>Password</label>

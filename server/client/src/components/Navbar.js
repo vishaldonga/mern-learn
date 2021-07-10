@@ -9,6 +9,9 @@ const Navbar = () => {
       return (
         <div className="header">
           <div className="button">
+            <NavLink to="/">Home</NavLink>
+          </div>
+          <div className="button">
             <NavLink to="/about">About Me</NavLink>
           </div>
           <div className="button">
@@ -19,6 +22,9 @@ const Navbar = () => {
     } else {
       return (
         <div className="header">
+          <div className="button">
+            <NavLink to="/">Home</NavLink>
+          </div>
           <div className="button">
             <NavLink to="/about">About Me</NavLink>
           </div>

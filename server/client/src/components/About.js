@@ -32,7 +32,7 @@ const About = () => {
   }, []);
 
   return (
-    <div>
+    <div className="head-info App">
       <h1>About Me</h1>
       <form method="">
         <div className="row">

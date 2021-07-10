@@ -33,6 +33,9 @@
   align-items: center;
   background-color: lightgray;
 }
+.w-89 {
+  width: 89% !important;
+}
 .home {
   text-align: center;
   margin-top: 15%;
@@ -63,10 +66,14 @@ form {
 .group {
   position: relative;
 }
+.group svg {
+  font-size: 20px;
+  margin-top: 15px;
+}
 input[type=text], input[type=password], input[type=email] {
   font-size: 15px;
   padding: 10px 10px 10px 5px;
-  display: block;
+  display: inline-block;
   width: 95%;
   border: none;
   font-weight: bold;

@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { MdEmail } from "react-icons/md";
+import { RiLockPasswordFill } from "react-icons/ri";
+import { CgNametag } from "react-icons/cg";
+import { HiCheckCircle } from "react-icons/hi";
 
 const SignUp = () => {
   const history = useHistory();
@@ -22,7 +26,7 @@ const SignUp = () => {
     e.preventDefault();
 
     const { firstName, lastName, email, password, cpassword } = user;
-    
+
     if (!firstName || !lastName || !email || !password || !cpassword) {
       window.alert("Please fill all the fields.");
       return;
@@ -76,6 +80,7 @@ const SignUp = () => {
                 onChange={handleInputChange}
                 required
               />
+              <MdEmail />
               <span className="highlight"></span>
               <span className="bar"></span>
               <label>Email</label>
@@ -88,10 +93,12 @@ const SignUp = () => {
                   type="text"
                   name="firstName"
                   id="firstName"
+                  className="w-89"
                   value={user.firstName}
                   onChange={handleInputChange}
                   required
                 />
+                <CgNametag />
                 <span className="highlight"></span>
                 <span className="bar"></span>
                 <label>First Name</label>
@@ -103,10 +110,12 @@ const SignUp = () => {
                   type="text"
                   name="lastName"
                   id="lastName"
+                  className="w-89"
                   value={user.lastName}
                   onChange={handleInputChange}
                   required
                 />
+                <CgNametag />
                 <span className="highlight"></span>
                 <span className="bar"></span>
                 <label>Last Name</label>
@@ -123,6 +132,7 @@ const SignUp = () => {
                 onChange={handleInputChange}
                 required
               />
+              <RiLockPasswordFill />
               <span className="highlight"></span>
               <span className="bar"></span>
               <label>Password</label>
@@ -138,6 +148,7 @@ const SignUp = () => {
                 onChange={handleInputChange}
                 required
               />
+              <HiCheckCircle />
               <span className="highlight"></span>
               <span className="bar"></span>
               <label>Confirm Password</label>
