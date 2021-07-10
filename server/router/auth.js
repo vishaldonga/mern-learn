@@ -6,29 +6,7 @@ const authenticate = require("../middleware/authenticate");
 require("../db/conn");
 const User = require("../model/userSchema");
 
-//By Promise
-// router.post('/signup', (req, res) => {
-//     console.log(req.body.firstname);
-//     const { firstname, lastname, email, password, cpassword } = req.body;
-
-//     if (!firstname || !lastname || !email || !password || !cpassword) {
-//         return res.status(422).json({error: "Enter field"});
-//     }
-
-//     User.findOne({email: email})
-//     .then((userExist) => {
-//         if (userExist) {
-//             return res.status(422).json({error: "Email Already exist"});
-//         }
-//         const user = new User({ firstname, lastname, email, password, cpassword });
-//         user.save().then(() => {
-//             res.status(201).json({message:"Stored successfully"});
-//         }).catch(err => res.status(500).json({error: err})); //Failed to register
-//     }).catch(err => res.status(500).json({error: err}))
-
-// });
-
-//By Async Await
+//Sign Up
 router.post("/signup", async (req, res) => {
   const { firstname, lastname, email, password, cpassword } = req.body;
 
@@ -73,7 +51,6 @@ router.post("/signin", async (req, res) => {
       const isMatch = await bcrypt.compare(password, userLogin.password);
 
       authToken = await userLogin.generateAuthToken();
-      //console.log(authToken);
       res.cookie("authtoken", authToken, {
         expires: new Date(Date.now() + 3000000),
         httpOnly: true,

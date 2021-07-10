@@ -28,6 +28,7 @@ const About = () => {
 
   useEffect(() => {
     getAboutMeData();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

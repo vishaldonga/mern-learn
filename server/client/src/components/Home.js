@@ -20,12 +20,12 @@ const Home = () => {
         throw new Error(res.error);
       }
     } catch (err) {
-      // throw new Error(err);
       history.push("/");
     }
   };
   useEffect(() => {
     getHomeData();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div className="home">
