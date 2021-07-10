@@ -14,7 +14,6 @@ const Home = () => {
         },
       });
       const data = await res.json();
-      console.log(data);
       setUserName(`${data.firstname} ${data.lastname}`);
 
       if (!res.status === 200) {
@@ -29,7 +28,7 @@ const Home = () => {
     getHomeData();
   }, []);
   return (
-    <div>
+    <div className="home">
       <h1>Welcome</h1>
       <h1>{userName ? userName : "User"}</h1>
     </div>

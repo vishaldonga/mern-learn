@@ -7,7 +7,7 @@ const Navbar = () => {
   const RenderMenu = () => {
     if (state) {
       return (
-        <div>
+        <div className="header">
           <div className="button">
             <NavLink to="/about">About Me</NavLink>
           </div>
@@ -18,7 +18,7 @@ const Navbar = () => {
       );
     } else {
       return (
-        <div>
+        <div className="header">
           <div className="button">
             <NavLink to="/about">About Me</NavLink>
           </div>

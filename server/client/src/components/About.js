@@ -16,14 +16,12 @@ const About = () => {
         credentials: "include",
       });
       const data = await res.json();
-      console.log(data);
       setUserData(data);
 
       if (res.status !== 200) {
         throw new Error(res.error);
       }
     } catch (err) {
-      // throw new Error(err);
       history.push("/signin");
     }
   };

@@ -38,80 +38,108 @@ const SignUp = () => {
     const data = await res.json();
     if (data.status === 422 || !data) {
       window.alert("Registration Failed");
-      console.log("Registration Failed");
     } else {
       window.alert("Registration Successful");
-      console.log("Registration Failed");
       history.push("/signin");
     }
   };
 
   return (
     <div>
-      <form method="POST" id="signUpForm">
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            value={user.email}
-            onChange={handleInputChange}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="lastName">First Name</label>
-          <input
-            type="text"
-            name="firstName"
-            id="firstName"
-            value={user.firstName}
-            onChange={handleInputChange}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="lastName">Last Name</label>
-          <input
-            type="text"
-            name="lastName"
-            id="lastName"
-            value={user.lastName}
-            onChange={handleInputChange}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            value={user.password}
-            onChange={handleInputChange}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="cpassword">Confirm Password</label>
-          <input
-            type="password"
-            name="cpassword"
-            id="cpassword"
-            value={user.cpassword}
-            onChange={handleInputChange}
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="submit"
-            name="signup"
-            id="signup"
-            value="Sign Up"
-            onClick={postData}
-          />
-        </div>
-        <div className="form-group">
-          <input type="submit" name="signin" id="signin" value="Sign In" />
-        </div>
-      </form>
+      <div className="head-info App">
+        <h1>Tell us about yourself</h1>
+        <p>Enter your details below</p>
+      </div>
+      <div>
+        <form method="POST" id="signUpForm">
+          <div className="group-parent">
+            <div className="group">
+              <input
+                type="text"
+                name="email"
+                id="email"
+                value={user.email}
+                onChange={handleInputChange}
+                required
+              />
+              <span className="highlight"></span>
+              <span className="bar"></span>
+              <label>Email</label>
+            </div>
+          </div>
+          <div className="flex">
+            <div className="group-parent">
+              <div className="group">
+                <input
+                  type="text"
+                  name="firstName"
+                  id="firstName"
+                  value={user.firstName}
+                  onChange={handleInputChange}
+                  required
+                />
+                <span className="highlight"></span>
+                <span className="bar"></span>
+                <label>First Name</label>
+              </div>
+            </div>
+            <div className="group-parent">
+              <div className="group">
+                <input
+                  type="text"
+                  name="lastName"
+                  id="lastName"
+                  value={user.lastName}
+                  onChange={handleInputChange}
+                  required
+                />
+                <span className="highlight"></span>
+                <span className="bar"></span>
+                <label>Last Name</label>
+              </div>
+            </div>
+          </div>
+          <div className="group-parent">
+            <div className="group">
+              <input
+                type="password"
+                name="password"
+                id="password"
+                value={user.password}
+                onChange={handleInputChange}
+                required
+              />
+              <span className="highlight"></span>
+              <span className="bar"></span>
+              <label>Password</label>
+            </div>
+          </div>
+          <div className="group-parent">
+            <div className="group">
+              <input
+                type="password"
+                name="cpassword"
+                id="cpassword"
+                value={user.cpassword}
+                onChange={handleInputChange}
+                required
+              />
+              <span className="highlight"></span>
+              <span className="bar"></span>
+              <label>Confirm Password</label>
+            </div>
+          </div>
+          <div className="group App">
+            <input
+              type="submit"
+              name="signup"
+              id="signup"
+              value="Sign Up"
+              onClick={postData}
+            />
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

@@ -31,40 +31,53 @@ const SignIn = () => {
 
   return (
     <div>
-      <form method="POST" id="signinForm">
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="submit"
-            name="signin"
-            id="signin"
-            value="Sign In"
-            onClick={loginUser}
-          />
-        </div>
-        <div className="form-group">
-          <input type="submit" name="signup" id="signup" value="Sign Up" />
-        </div>
-      </form>
+      <div className="head-info App">
+        <h1>Sign in to get started</h1>
+        <p>Enter your details below</p>
+      </div>
+      <div>
+        <form method="POST" id="signinForm">
+          <div className="group-parent">
+            <div className="group">
+              <input
+                type="text"
+                name="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <span className="highlight"></span>
+              <span className="bar"></span>
+              <label>Email</label>
+            </div>
+          </div>
+          <div className="group-parent">
+            <div className="group">
+              <input
+                type="password"
+                name="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+              <span className="highlight"></span>
+              <span className="bar"></span>
+              <label>Password</label>
+            </div>
+          </div>
+          <div className="group App">
+            <input
+              type="submit"
+              name="signin"
+              id="signin"
+              value="Sign In"
+              onClick={loginUser}
+            />
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
