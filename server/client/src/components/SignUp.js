@@ -93,7 +93,7 @@ const SignUp = () => {
                   type="text"
                   name="firstName"
                   id="firstName"
-                  className="w-89"
+                  className="w-88"
                   value={user.firstName}
                   onChange={handleInputChange}
                   required
@@ -110,7 +110,7 @@ const SignUp = () => {
                   type="text"
                   name="lastName"
                   id="lastName"
-                  className="w-89"
+                  className="w-88"
                   value={user.lastName}
                   onChange={handleInputChange}
                   required
